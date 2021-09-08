@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "m6Bs9zQ1cK0FCfTzGBZYS8tIhSL7N7Ri4HpSH2WNqbCjgYj9yEREv1TeKOR2ABBNcU4sym29oGfD9dGha+Gf8A==",
+  "success": true,
+  "projectFilePath": "D:\\Work\\Itransition\\Task3\\Task3\\Task3.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kolya\\.nuget\\packages\\bouncycastle.netcore\\1.8.8\\bouncycastle.netcore.1.8.8.nupkg.sha512"
+  ],
+  "logs": []
+}
