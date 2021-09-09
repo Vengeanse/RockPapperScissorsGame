@@ -23,13 +23,14 @@ namespace Task3
 
         public string GetHMAC(string word)
         {
-            string keyWord = secretKey + word;
+            var hmac = new Org.BouncyCastle.Crypto.Macs.HMac(new Org.BouncyCastle.Crypto.Digests.Sha3Digest(256));
+            hmac.Init(new Org.BouncyCastle.Crypto.Parameters.KeyParameter(Encoding.UTF8.GetBytes(secretKey)));
+            byte[] result = new byte[hmac.GetMacSize()];
+            byte[] bytes = Encoding.UTF8.GetBytes(word);
 
-            var hashAlgorithm = new Org.BouncyCastle.Crypto.Digests.Sha3Digest(256);
-            byte[] input = Encoding.ASCII.GetBytes(keyWord);
-            hashAlgorithm.BlockUpdate(input, 0, input.Length);
-            byte[] result = new byte[32];
-            hashAlgorithm.DoFinal(result, 0);
+            hmac.BlockUpdate(bytes, 0, bytes.Length);
+            hmac.DoFinal(result, 0);
+
             string hashString = BitConverter.ToString(result);
             hashString = hashString.Replace("-", "").ToLowerInvariant();
 

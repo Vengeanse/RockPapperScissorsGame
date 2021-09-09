@@ -2,7 +2,7 @@
   "profiles": {
     "Task3": {
       "commandName": "Project",
-      "commandLineArgs": "rock papper scissor fire ice"
+      "commandLineArgs": "rock papper scissor"
     }
   }
 }
